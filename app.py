@@ -51,7 +51,7 @@ if uploaded_file:
 
     # Check if the file has audio data
     if os.path.getsize(temp_path) == 0:
-        st.error("❌ The uploaded file is empty. Please upload a valid audio file.")
+        st.error(" The uploaded file is empty. Please upload a valid audio file.")
         os.remove(temp_path)
     else:
         # Show duration
@@ -65,14 +65,14 @@ if uploaded_file:
         if uploaded_file.size > 200 * 1024 * 1024:
             st.warning("⚠️ The file is too large. Please upload a file under 50 MB.")
         else:
-            with st.spinner("🧠 Transcribing... Please wait."):
+            with st.spinner("Transcribing... Please wait."):
                 try:
                     result = transcribe_audio(temp_path, model)
-                    st.success("✅ Transcription Complete!")
-                    st.text_area("📝 Transcribed Text", value=result["text"], height=300)
-                    st.download_button("⬇️ Download Transcript", result["text"], file_name="transcript.txt")
+                    st.success("Transcription Complete!")
+                    st.text_area("Transcribed Text",value=result["text"], height=300)
+                    st.download_button("Download Transcript", result["text"], file_name="transcript.txt")
                 except Exception as e:
-                    st.error(f"❌ Error during transcription: {e}")
+                    st.error(f" Error during transcription: {e}")
 
         # Delete temporary file
         os.remove(temp_path)
