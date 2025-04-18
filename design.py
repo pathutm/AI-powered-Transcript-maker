@@ -21,6 +21,10 @@ def custom_styling():
             .stTextArea textarea {
                 font-family: 'Arial', sans-serif;
                 font-size: 16px;
+                padding: 10px;
+                border-radius: 8px;
+                border: 1px solid #ccc;
+                background-color: #f9f9f9;
             }
         </style>
     """, unsafe_allow_html=True)
