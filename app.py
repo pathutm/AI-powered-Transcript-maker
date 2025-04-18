@@ -51,7 +51,7 @@ if uploaded_file:
         st.warning(f"⚠️ Could not determine duration: {e}")
 
     # File size check
-    if uploaded_file.size > 50 * 1024 * 1024:
+    if uploaded_file.size > 200 * 1024 * 1024:
         st.warning("⚠️ The file is too large. Please upload a file under 50 MB.")
     else:
         with st.spinner("🧠 Transcribing... Please wait."):
